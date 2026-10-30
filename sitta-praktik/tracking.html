@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tracking Pengiriman — SITTA</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark"><img src="assets/logo-ut-icon.png" alt="Logo Universitas Terbuka"></span>SITTA</div>
+
+    <button class="nav-link" type="button" onclick="window.location.href='dashboard.html'">Dashboard</button>
+    <button class="nav-link" type="button" onclick="window.location.href='stok.html'">Informasi Bahan Ajar</button>
+    <button class="nav-link active" type="button">Tracking Pengiriman</button>
+
+    <div class="nav-group">
+      <button class="nav-link" type="button" id="laporan-toggle">Laporan</button>
+      <div class="nav-sub" id="laporan-submenu">
+        <button class="nav-link" type="button" data-coming-soon>Monitoring Progress DO Bahan Ajar</button>
+        <button class="nav-link" type="button" data-coming-soon>Rekap Bahan Ajar</button>
+      </div>
+    </div>
+
+    <button class="nav-link" type="button" data-coming-soon>Histori Transaksi Bahan Ajar</button>
+    <button class="nav-link logout-btn" type="button" id="logout-btn">Keluar</button>
+  </aside>
+
+  <main class="main-area">
+    <div class="topbar">
+      <div class="greeting">
+        Tracking Pengiriman
+        <span class="muted">Lacak status pengiriman bahan ajar berdasarkan nomor Delivery Order</span>
+      </div>
+      <div class="user-chip">
+        <span class="avatar" id="user-avatar">–</span>
+        <span id="user-name">Memuat...</span>
+      </div>
+    </div>
+
+    <section class="panel">
+      <h2>Cari Delivery Order</h2>
+      <p class="panel-sub">Contoh nomor DO uji coba: 2023001234 atau 2023005678</p>
+      <div class="search-row">
+        <input type="text" id="do-input" placeholder="Masukkan Nomor DO / Billing">
+        <button type="button" class="btn-amber" id="search-btn">Cari</button>
+      </div>
+    </section>
+
+    <section id="result-area"></section>
+  </main>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/tracking.js"></script>
+</body>
+</html>

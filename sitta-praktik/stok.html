@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informasi Bahan Ajar — SITTA</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark"><img src="assets/logo-ut-icon.png" alt="Logo Universitas Terbuka"></span>SITTA</div>
+
+    <button class="nav-link" type="button" onclick="window.location.href='dashboard.html'">Dashboard</button>
+    <button class="nav-link active" type="button">Informasi Bahan Ajar</button>
+    <button class="nav-link" type="button" onclick="window.location.href='tracking.html'">Tracking Pengiriman</button>
+
+    <div class="nav-group">
+      <button class="nav-link" type="button" id="laporan-toggle">Laporan</button>
+      <div class="nav-sub" id="laporan-submenu">
+        <button class="nav-link" type="button" data-coming-soon>Monitoring Progress DO Bahan Ajar</button>
+        <button class="nav-link" type="button" data-coming-soon>Rekap Bahan Ajar</button>
+      </div>
+    </div>
+
+    <button class="nav-link" type="button" data-coming-soon>Histori Transaksi Bahan Ajar</button>
+    <button class="nav-link logout-btn" type="button" id="logout-btn">Keluar</button>
+  </aside>
+
+  <main class="main-area">
+    <div class="topbar">
+      <div class="greeting">
+        Informasi Bahan Ajar
+        <span class="muted">Peragaan data bahan ajar (BMP) di seluruh lokasi UPBJJ-UT</span>
+      </div>
+      <div class="user-chip">
+        <span class="avatar" id="user-avatar">–</span>
+        <span id="user-name">Memuat...</span>
+      </div>
+    </div>
+
+    <section class="panel">
+      <div class="search-row">
+        <input type="text" id="filter-input" placeholder="Cari judul atau kode barang...">
+        <button type="button" class="btn-amber" id="add-btn">+ Tambah Stok Baru</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <p class="panel-sub">Klik salah satu baris untuk melihat peragaan detail data bahan ajar tersebut.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Sampul</th>
+            <th>Kode Barang</th>
+            <th>Nama Barang</th>
+            <th>Jenis</th>
+            <th>Edisi</th>
+            <th>Lokasi</th>
+            <th>Stok</th>
+          </tr>
+        </thead>
+        <tbody id="stok-body"></tbody>
+      </table>
+      <p class="empty-state" id="empty-msg" style="display:none;">Tidak ada bahan ajar yang cocok dengan pencarian.</p>
+    </section>
+  </main>
+</div>
+
+<!-- Modal: Tambah Stok Baru -->
+<div class="modal-backdrop" id="modal-add">
+  <div class="modal-box">
+    <h3>Tambah Stok Bahan Ajar</h3>
+    <p class="sub">Data baru akan ditambahkan ke tabel secara langsung di sisi antarmuka (DOM).</p>
+    <form id="add-form">
+      <div class="field" id="field-kodeLokasi">
+        <label for="f-kodeLokasi">Kode Lokasi</label>
+        <input type="text" id="f-kodeLokasi" placeholder="Contoh: 0JKT01">
+        <p class="error-msg">Kode lokasi wajib diisi.</p>
+      </div>
+      <div class="field" id="field-kodeBarang">
+        <label for="f-kodeBarang">Kode Barang</label>
+        <input type="text" id="f-kodeBarang" placeholder="Contoh: EKMA4216">
+        <p class="error-msg">Kode barang wajib diisi.</p>
+      </div>
+      <div class="field" id="field-namaBarang">
+        <label for="f-namaBarang">Nama Barang</label>
+        <input type="text" id="f-namaBarang" placeholder="Judul BMP">
+        <p class="error-msg">Nama barang wajib diisi.</p>
+      </div>
+      <div class="field" id="field-edisi">
+        <label for="f-edisi">Edisi</label>
+        <input type="text" id="f-edisi" placeholder="Contoh: 2">
+        <p class="error-msg">Edisi wajib diisi.</p>
+      </div>
+      <div class="field" id="field-stok">
+        <label for="f-stok">Jumlah Stok</label>
+        <input type="number" id="f-stok" min="0" placeholder="Contoh: 100">
+        <p class="error-msg">Stok wajib diisi dengan angka 0 atau lebih.</p>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn-ghost" data-close-modal="modal-add">Batal</button>
+        <button type="submit" class="btn-primary">Simpan</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: Detail Bahan Ajar -->
+<div class="modal-backdrop" id="modal-detail">
+  <div class="modal-box" id="detail-content"></div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/stok.js"></script>
+</body>
+</html>

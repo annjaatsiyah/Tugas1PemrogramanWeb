@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masuk — SITTA Universitas Terbuka</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main class="login-shell">
+
+  <!-- Panel kiri: identitas aplikasi -->
+  <section class="login-aside">
+    <div class="brand">
+      <span class="brand-mark"><img src="assets/logo-ut-icon.png" alt="Logo Universitas Terbuka"></span>
+      SITTA
+    </div>
+    <div class="pitch">
+      <h1>Satu pintu untuk distribusi bahan ajar UT.</h1>
+      <p>SITTA membantu UPBJJ-UT memesan, melacak, dan memantau distribusi bahan ajar cetak secara daring, tanpa harus berpindah sistem.</p>
+    </div>
+    <p class="foot-note">Tugas Praktik 1 — STSI4209 Pemrograman Berbasis Web · Universitas Terbuka</p>
+  </section>
+
+  <!-- Panel kanan: form login -->
+  <section class="login-main">
+    <div class="login-card">
+      <h2>Selamat Datang</h2>
+      <p class="sub">Masuk dengan akun UPBJJ-UT Anda untuk melanjutkan.</p>
+
+      <form id="login-form" novalidate>
+        <div class="field" id="field-email">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="nama@ut.ac.id" autocomplete="username">
+          <p class="error-msg">Email wajib diisi dan harus berformat benar.</p>
+        </div>
+
+        <div class="field" id="field-password">
+          <label for="password">Kata Sandi</label>
+          <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" autocomplete="current-password">
+          <p class="error-msg">Kata sandi wajib diisi.</p>
+        </div>
+
+        <div class="field-links">
+          <a href="#" id="link-forgot">Lupa kata sandi?</a>
+        </div>
+
+        <button type="submit" class="btn-primary">Masuk</button>
+      </form>
+
+      <p class="signup-line">Belum punya akun? <a href="#" id="link-register">Daftar di sini</a></p>
+      <p class="footer-note">Contoh akun uji coba: rina@ut.ac.id / rina123</p>
+    </div>
+  </section>
+</main>
+
+<!-- Modal: Lupa Password -->
+<div class="modal-backdrop" id="modal-forgot">
+  <div class="modal-box">
+    <h3>Lupa Kata Sandi</h3>
+    <p class="sub">Masukkan email terdaftar Anda. Tautan atur ulang kata sandi akan dikirim ke email tersebut.</p>
+    <form id="forgot-form">
+      <div class="field" id="field-forgot-email">
+        <label for="forgot-email">Email</label>
+        <input type="email" id="forgot-email" placeholder="nama@ut.ac.id">
+        <p class="error-msg">Masukkan alamat email yang valid.</p>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn-ghost" data-close-modal="modal-forgot">Batal</button>
+        <button type="submit" class="btn-primary">Kirim Tautan</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: Daftar -->
+<div class="modal-backdrop" id="modal-register">
+  <div class="modal-box">
+    <h3>Daftar Akun Baru</h3>
+    <p class="sub">Pendaftaran akun SITTA dilakukan oleh admin pusat. Lengkapi data berikut dan tim kami akan menghubungi Anda.</p>
+    <form id="register-form">
+      <div class="field" id="field-reg-nama">
+        <label for="reg-nama">Nama Lengkap</label>
+        <input type="text" id="reg-nama" placeholder="Nama sesuai identitas">
+        <p class="error-msg">Nama wajib diisi.</p>
+      </div>
+      <div class="field" id="field-reg-email">
+        <label for="reg-email">Email</label>
+        <input type="email" id="reg-email" placeholder="nama@ut.ac.id">
+        <p class="error-msg">Masukkan alamat email yang valid.</p>
+      </div>
+      <div class="field" id="field-reg-lokasi">
+        <label for="reg-lokasi">Lokasi UPBJJ</label>
+        <input type="text" id="reg-lokasi" placeholder="Contoh: UPBJJ Jakarta">
+        <p class="error-msg">Lokasi UPBJJ wajib diisi.</p>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn-ghost" data-close-modal="modal-register">Batal</button>
+        <button type="submit" class="btn-primary">Kirim Permohonan</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

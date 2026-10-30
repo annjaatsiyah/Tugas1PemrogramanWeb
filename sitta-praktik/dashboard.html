@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard — SITTA</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark"><img src="assets/logo-ut-icon.png" alt="Logo Universitas Terbuka"></span>SITTA</div>
+
+    <button class="nav-link active" type="button">Dashboard</button>
+    <button class="nav-link" type="button" onclick="window.location.href='stok.html'">Informasi Bahan Ajar</button>
+    <button class="nav-link" type="button" onclick="window.location.href='tracking.html'">Tracking Pengiriman</button>
+
+    <div class="nav-group">
+      <button class="nav-link" type="button" id="laporan-toggle">Laporan</button>
+      <div class="nav-sub" id="laporan-submenu">
+        <button class="nav-link" type="button" data-coming-soon>Monitoring Progress DO Bahan Ajar</button>
+        <button class="nav-link" type="button" data-coming-soon>Rekap Bahan Ajar</button>
+      </div>
+    </div>
+
+    <button class="nav-link" type="button" data-coming-soon>Histori Transaksi Bahan Ajar</button>
+
+    <button class="nav-link logout-btn" type="button" id="logout-btn">Keluar</button>
+  </aside>
+
+  <main class="main-area">
+    <div class="topbar">
+      <div class="greeting">
+        <span id="greeting-text">Selamat datang</span>
+        <span class="muted" id="greeting-sub">Dashboard Aplikasi SITTA</span>
+      </div>
+      <div class="user-chip">
+        <span class="avatar" id="user-avatar">–</span>
+        <span id="user-name">Memuat...</span>
+      </div>
+    </div>
+
+    <section class="card-grid" id="stat-cards"></section>
+
+    <section class="panel">
+      <h2>Ringkasan Bahan Ajar</h2>
+      <p class="panel-sub">Lima judul dengan stok terbanyak saat ini. Lihat selengkapnya pada menu Informasi Bahan Ajar.</p>
+      <table>
+        <thead>
+          <tr><th>Judul Bahan Ajar</th><th>Kode</th><th>Lokasi</th><th>Stok</th></tr>
+        </thead>
+        <tbody id="dashboard-stok-body"></tbody>
+      </table>
+    </section>
+  </main>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
